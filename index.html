@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Math Battle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="myFunction()" data-new-gr-c-s-check-loaded="14.984.0" data-gr-ext-installed="">
+    <div id="mario-chat">
+        <div id="chat-window">
+            <div id="output">
+    
+           
+        </div>
+        <input type="text" id="handle" placeholder="Your Name">
+            <input type="text" id="message" placeholder="Message">
+                <button id="send" type="submit" onclick="">Send</button>
+            
+        </div>
+
+
+   
+<script>
+    let n = document.getElementById('handle')
+    let message = document.getElementById('message')
+    let output = document.getElementById('output')
+    let button = document.getElementById('send')
+    let ans;
+    button.addEventListener('click', ()=>{  
+  
+       output.innerHTML += '<p> <strong>'+n.value+': </strong> '+message.value+'</p>'
+       
+       if(message.value=="Yes"){
+           let num_1 = parseInt(Math.random()*200)
+           let num_2 = parseInt(Math.random()*200)
+           let decider = parseInt(Math.random()*4) 
+           if (decider==0){
+                ans=num_1+num_2
+                output.innerHTML += '<p> <strong>'+'Zach'+': </strong> '+'Solve -'+num_1+"+"+num_2+'</p>'
+                setTimeout(()=>{output.innerHTML+='<p> <strong>'+'Zach'+': </strong> '+'My answer is -'+ans+",did you get it right?, If yes you beat me! And if no...Then send me a 'Yes' to rematch!"+'</p>'}, 10000)
+    
+             
+       }
+       else if (decider==1){
+                ans=num_1-num_2
+                output.innerHTML += '<p> <strong>'+'Zach'+': </strong> '+'Solve -'+num_1+"-"+num_2+'</p>'
+                setTimeout(()=>{output.innerHTML+='<p> <strong>'+'Zach'+': </strong> '+'My answer is -'+ans+",did you get it right?, If yes you beat me! And if no...Then send me a 'Yes' to rematch!"+'</p>'}, 10000)
+             
+       }
+       else if (decider==2){
+                ans=num_1*num_2
+                output.innerHTML += '<p> <strong>'+'Zach'+': </strong> '+'Solve -'+num_1+"*"+num_2+'</p>'
+                setTimeout(()=>{output.innerHTML+='<p> <strong>'+'Zach'+': </strong> '+'My answer is -'+ans+",did you get it right?, If yes you beat me! And if no...Then send me a 'Yes' to rematch!"+'</p>'}, 10000)
+             
+       }
+       else if (decider==1){
+                ans=num_1/num_2
+                output.innerHTML += '<p> <strong>'+'Zach'+': </strong> '+'Solve -'+num_1+"/"+num_2+'</p>'
+                setTimeout(()=>{output.innerHTML+='<p> <strong>'+'Zach'+': </strong> '+'My answer is -'+ans+",did you get it right?, If yes you beat me! And if no...Then send me a 'Yes' to rematch!"+'</p>'}, 10000)
+             
+       }
+    
+    }
+    })
+    function myFunction(){
+        output.innerHTML += '<p> <strong>'+'Zach'+': </strong> '+'Hello!'+'</p>'
+        output.innerHTML += '<p> <strong>'+'Zach'+': </strong> '+'Do you think you can beat me in a Maths competition, if Yes!, then type "Yes" to start!'+'</p>'
+        output.innerHTML += '<p> <strong>'+'Zach'+': </strong> '+'You will have 10 seconds to answer, or else you lose!'+'</p>'
+    }
+
+        
+       
+    
+</script>
+
+<style>
+ 
+</style>
+
+
+
+</body>
+</html>
